@@ -30,7 +30,7 @@ public class DeathRun implements Listener {
         Random random = new Random();
         double number = random.nextDouble();
         double max = 1.0;
-        double min = 0.7;
+        double min = 0.9;
         boolean isDeathrun;
 
         if (!e.getEntity().getWorld().hasStorm()) {
