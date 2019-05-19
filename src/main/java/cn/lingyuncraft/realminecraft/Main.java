@@ -4,7 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bstats.bukkit.Metrics;
+import cn.lingyuncraft.realminecraft.MetricsLite;
 
 /**
  * @author shaokeyibb贺兰星辰
@@ -25,7 +25,7 @@ public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        Metrics metrics = new Metrics(this);
+        MetricsLite metrics = new MetricsLite(this);
         getLogger().info("§aRealMinecraft插件正在启动中......");
         getLogger().info("§b正在注册桶事件监听器......");
         Bukkit.getPluginManager().registerEvents(new BrokenBucket(), this);
