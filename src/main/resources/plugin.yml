@@ -2,4 +2,4 @@ name: RealMinecraft
 version: ${project.version}
 main: cn.lingyuncraft.realminecraft.Main
 authors: [shaokeyibb]
-description: Make your Minecraft Server mare Real
+description: Make your Minecraft Server more Real?(or maybe just a kidding)
