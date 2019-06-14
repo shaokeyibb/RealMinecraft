@@ -11,7 +11,7 @@
 
     <name>RealMinecraft</name>
 
-    <description>Make your Minecraft Server mare Real</description>
+    <description>Make your Minecraft Server more Real</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -57,10 +57,6 @@
         <repository>
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
-        </repository>
-        <repository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
     </repositories>
 
