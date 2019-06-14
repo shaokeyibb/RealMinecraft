@@ -25,31 +25,31 @@ public class BrokenBucket implements Listener {
         boolean isBreak;
 
         isBreak = number <= max && number >= min;
-        if (e.getBucket() == Main.TruelyBucket && e.getBlockClicked().getType() == Main.LAVA) {
+        if (e.getBucket() == RealMinecraft.TruelyBucket && e.getBlockClicked().getType() == RealMinecraft.LAVA) {
             if (isBreak) {
                 World playerWorld = e.getPlayer().getWorld();
                 int playerX = e.getPlayer().getLocation().getBlockX();
                 int playerY = e.getPlayer().getLocation().getBlockY();
                 int playerZ = e.getPlayer().getLocation().getBlockZ();
                 Block changedBlock = playerWorld.getBlockAt(playerX, playerY,playerZ);
-                if (e.getPlayer().getLocation().getBlock().getType() == Main.AIR) {
-                    e.setItemStack(Main.ChangedBucket);
+                if (e.getPlayer().getLocation().getBlock().getType() == RealMinecraft.AIR) {
+                    e.setItemStack(RealMinecraft.ChangedBucket);
                     e.getPlayer().sendMessage("§a你的桶看起来不太牢固......");
-                    changedBlock.setType(Main.LAVA);
+                    changedBlock.setType(RealMinecraft.LAVA);
                 }
             }
         }
-        if (e.getBucket() == Main.TruelyBucket && e.getBlockClicked().getType() == Main.WATER) {
+        if (e.getBucket() == RealMinecraft.TruelyBucket && e.getBlockClicked().getType() == RealMinecraft.WATER) {
             if (isBreak) {
                 World playerWorld = e.getPlayer().getWorld();
                 int playerX = e.getPlayer().getLocation().getBlockX();
                 int playerY = e.getPlayer().getLocation().getBlockY();
                 int playerZ = e.getPlayer().getLocation().getBlockZ();
                 Block changedBlock = playerWorld.getBlockAt(playerX, playerY, playerZ);
-                if (e.getPlayer().getLocation().getBlock().getType() == Main.AIR) {
-                    e.setItemStack(Main.ChangedBucket);
+                if (e.getPlayer().getLocation().getBlock().getType() == RealMinecraft.AIR) {
+                    e.setItemStack(RealMinecraft.ChangedBucket);
                     e.getPlayer().sendMessage("§a你的桶看起来不太牢固......");
-                    changedBlock.setType(Main.WATER);
+                    changedBlock.setType(RealMinecraft.WATER);
                 }
             }
         }

@@ -1,0 +1,6 @@
+Feature:
+  UnsafeSand:
+    Enabled: true
+    Possibility: 70
+    CheckPeriod: 10
+    FallingSpeed: 1
