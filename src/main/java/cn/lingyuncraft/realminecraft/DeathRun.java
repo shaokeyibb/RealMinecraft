@@ -22,7 +22,7 @@ import static org.bukkit.plugin.java.JavaPlugin.getPlugin;
 public class DeathRun implements Listener {
 
     private int spawnTime = 5;
-    private Plugin mainPlugin = getPlugin(Main.class);
+    private Plugin mainPlugin = getPlugin(RealMinecraft.class);
 
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent e) {

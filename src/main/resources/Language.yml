@@ -1,0 +1,16 @@
+Plugin:
+  Prefix: "&9[&6Real &bMinecraft&9] "
+  INFO: "&a&l&o>> "
+  WARN: "&e&l&o>> "
+  ERROR: "&c&l&o>> "
+  NoPermission: "&7您没有权限这么做!"
+  ReloadSuccess: "&7重载成功!"
+  NotPlayer: "仅玩家可执行此命令."
+Commands:
+  Unknown:
+    Param: "&7未知参数, 请检查您的命令拼写."
+Feature:
+  UnsafeSand:
+    Starting: "&7你感觉地面有点不对劲..."
+    EscapeSuccess: "&7你成功逃出了沙丘的监禁."
+    EscapeFailure: "&7终究未能从沙丘的魅力中挣脱..."

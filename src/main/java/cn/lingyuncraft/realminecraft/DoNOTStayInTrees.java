@@ -34,7 +34,7 @@ public class DoNOTStayInTrees implements Listener {
         boolean hasStorm = e.getPlayer().getWorld().hasStorm();
         int treeHeight = 8;
         for (int i = 0; i < treeHeight; i++) {
-            if (original.add(0, 1, 0).getBlock().getType().equals(Main.TREELEAVES) || original.add(0, 1, 0).getBlock().getType().equals(Main.TREELEAVES2)) {
+            if (original.add(0, 1, 0).getBlock().getType().equals(RealMinecraft.TREELEAVES) || original.add(0, 1, 0).getBlock().getType().equals(RealMinecraft.TREELEAVES2)) {
                 underTree = true;
                 break;
             }
@@ -42,7 +42,7 @@ public class DoNOTStayInTrees implements Listener {
         ItemStack playerIS = e.getPlayer().getInventory().getHelmet();
         if (hasStorm && underTree) {
             int timePassthrough = 30;
-            if (isSimilar(Main.TreesGet, playerIS)) {
+            if (isSimilar(RealMinecraft.TreesGet, playerIS)) {
                 originalTime++;
                 if (originalTime >= timePassthrough) {
                     e.getPlayer().getWorld().strikeLightning(playerLocation);
@@ -50,7 +50,7 @@ public class DoNOTStayInTrees implements Listener {
                     Bukkit.broadcastMessage(e.getPlayer().getDisplayName() + "§c由于人品太差被雷劈了！");
                     originalTime = 0;
                 }
-            } else if (isSimilar(Main.TreesGet2, playerIS)) {
+            } else if (isSimilar(RealMinecraft.TreesGet2, playerIS)) {
                 originalTime2++;
                 if (originalTime2 >= timePassthrough) {
                     e.getPlayer().getWorld().strikeLightning(playerLocation);

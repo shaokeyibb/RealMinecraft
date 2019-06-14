@@ -1,5 +1,10 @@
 name: RealMinecraft
 version: ${project.version}
-main: cn.lingyuncraft.realminecraft.Main
+main: cn.lingyuncraft.realminecraft.RealMinecraft
 authors: [shaokeyibb]
 description: Make your Minecraft Server mare Real
+commands:
+  realminecraft:
+    aliases:
+      - realmc
+      - rmc
