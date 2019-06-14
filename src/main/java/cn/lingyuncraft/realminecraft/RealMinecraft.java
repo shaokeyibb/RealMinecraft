@@ -9,7 +9,6 @@ import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
-import cn.lingyuncraft.realminecraft.MetricsLite;
 
 /**
  * @author shaokeyibb贺兰星辰
@@ -18,33 +17,33 @@ import cn.lingyuncraft.realminecraft.MetricsLite;
 public final class RealMinecraft extends JavaPlugin {
 
     @Getter private static RealMinecraft instance;
-    public static final String PLUGIN_VERSION = "1.0-RELEASE";
+    public static final String PLUGIN_VERSION = "0.50-SNAPSHOT";
 
     private String[] enableMsg = {
-            "&7----------------------------------------",
+            "§7----------------------------------------",
             "",
-            "  &6&lReal &b&lMinecraft &9| &7真实世界 >>>",
+            "  §6§lReal §b§lMinecraft §9| §7真实世界 >>>",
             "",
-            "  &7作者: &cshaokeyibb 贺兰星辰",
-            "  &7版本: &c" + RealMinecraft.PLUGIN_VERSION,
+            "  §7作者: §cshaokeyibb 贺兰星辰",
+            "  §7版本: §c" + RealMinecraft.PLUGIN_VERSION,
             "",
-            "  &7正在启动 &a>>>",
+            "  §7正在启动 §a>>>",
             "",
-            "&7----------------------------------------"
+            "§7----------------------------------------"
     };
     private String[] disableMsg = {
-            "&7----------------------------------------",
+            "§7----------------------------------------",
             "",
-            "  &6&lReal &b&lMinecraft &9| &7真实世界 >>>",
+            "  §6§lReal §b§lMinecraft §9| §7真实世界 >>>",
             "",
-            "  &7作者: &cshaokeyibb 贺兰星辰",
-            "  &7版本: &c" + RealMinecraft.PLUGIN_VERSION,
+            "  §7作者: §cshaokeyibb 贺兰星辰",
+            "  §7版本: §c" + RealMinecraft.PLUGIN_VERSION,
             "",
-            "  &7正在关闭 &c>>>",
+            "  §7正在关闭 §c>>>",
             "",
-            "&7----------------------------------------"
+            "§7----------------------------------------"
     };
-    private String loadEndSuffix = "&7----------------------------------------";
+    private String loadEndSuffix = "§7----------------------------------------";
 
     @Override
     public void onEnable() {
@@ -56,23 +55,23 @@ public final class RealMinecraft extends JavaPlugin {
 
         Bukkit.getPluginManager().registerEvents(new PlayerMoveListener(), this);
         Bukkit.getPluginManager().registerEvents(new PlayerDeathListener(), this);
-        getLogger().info("  &a&l> &7注册 &c事件监听器 &7成功.");
+        getLogger().info("  §a§l> §7注册 §c事件监听器 §7成功.");
 
         if(UnsafeSand.getInstance().isEnabled()) {
             new CheckPlayerFeetUnder().runTaskTimerAsynchronously(this, 60 * 20, UnsafeSand.getInstance().getCheckPeriod());
-            Bukkit.getLogger().info("  &a&l> &7启动 &c[隐藏功能] &7相关检测任务.");
+            Bukkit.getLogger().info("  §a§l> §7启动 §c[隐藏功能] §7相关检测任务.");
         }
 
-        Bukkit.getLogger().info(ChatColor.translateAlternateColorCodes('&', loadEndSuffix));
+        Bukkit.getLogger().info(ChatColor.translateAlternateColorCodes('§', loadEndSuffix));
     }
 
     private void init() {
         for(String msg : enableMsg) {
-            Bukkit.getLogger().info(ChatColor.translateAlternateColorCodes('&', msg));
+            Bukkit.getLogger().info(ChatColor.translateAlternateColorCodes('§', msg));
         }
 
         MetricsLite metrics = new MetricsLite(this);
-        Bukkit.getLogger().info("  &a&l> &7启动 &cbStats &7数据统计服务成功.");
+        Bukkit.getLogger().info("  §a§l> §7启动 §cbStats §7数据统计服务成功.");
 
         LocaleManager.getInstance().loadLanguage();
     }
@@ -81,7 +80,7 @@ public final class RealMinecraft extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
         for(String msg : disableMsg) {
-            Bukkit.getLogger().info(ChatColor.translateAlternateColorCodes('&', msg));
+            Bukkit.getLogger().info(ChatColor.translateAlternateColorCodes('§', msg));
         }
     }
 }
