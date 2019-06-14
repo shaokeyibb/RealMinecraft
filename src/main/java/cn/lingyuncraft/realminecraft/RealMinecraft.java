@@ -8,8 +8,6 @@ import cn.lingyuncraft.realminecraft.tasks.CheckPlayerFeetUnder;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import cn.lingyuncraft.realminecraft.MetricsLite;
 
@@ -47,16 +45,6 @@ public final class RealMinecraft extends JavaPlugin {
             "&7----------------------------------------"
     };
     private String loadEndSuffix = "&7----------------------------------------";
-
-    static Material TruelyBucket = Material.BUCKET;
-    static Material LAVA = Material.LAVA;
-    static Material WATER = Material.WATER;
-    static Material AIR = Material.AIR;
-    static ItemStack ChangedBucket = new ItemStack(Material.IRON_INGOT);
-    static ItemStack TreesGet = new ItemStack(Material.IRON_HELMET);
-    static ItemStack TreesGet2 = new ItemStack(Material.GOLD_HELMET);
-    static Material TREELEAVES = Material.LEAVES;
-    static Material TREELEAVES2 = Material.LEAVES_2;
 
     @Override
     public void onEnable() {

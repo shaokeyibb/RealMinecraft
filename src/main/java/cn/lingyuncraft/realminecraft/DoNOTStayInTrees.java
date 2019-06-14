@@ -2,6 +2,7 @@ package cn.lingyuncraft.realminecraft;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
@@ -12,6 +13,10 @@ import org.bukkit.inventory.ItemStack;
  */
 public class DoNOTStayInTrees implements Listener {
 
+    private static ItemStack TreesGet = new ItemStack(Material.IRON_HELMET);
+    private static ItemStack TreesGet2 = new ItemStack(Material.GOLD_HELMET);
+    private static Material TreeLeaves = Material.LEAVES;
+    private static Material TreeLeaves2 = Material.LEAVES_2;
     private int originalTime = 0;
     private int originalTime2 = 0;
 
@@ -34,7 +39,7 @@ public class DoNOTStayInTrees implements Listener {
         boolean hasStorm = e.getPlayer().getWorld().hasStorm();
         int treeHeight = 8;
         for (int i = 0; i < treeHeight; i++) {
-            if (original.add(0, 1, 0).getBlock().getType().equals(RealMinecraft.TREELEAVES) || original.add(0, 1, 0).getBlock().getType().equals(RealMinecraft.TREELEAVES2)) {
+            if (original.add(0, 1, 0).getBlock().getType().equals(TreeLeaves) || original.add(0, 1, 0).getBlock().getType().equals(TreeLeaves2)) {
                 underTree = true;
                 break;
             }
@@ -42,7 +47,7 @@ public class DoNOTStayInTrees implements Listener {
         ItemStack playerIS = e.getPlayer().getInventory().getHelmet();
         if (hasStorm && underTree) {
             int timePassthrough = 30;
-            if (isSimilar(RealMinecraft.TreesGet, playerIS)) {
+            if (isSimilar(TreesGet, playerIS)) {
                 originalTime++;
                 if (originalTime >= timePassthrough) {
                     e.getPlayer().getWorld().strikeLightning(playerLocation);
@@ -50,7 +55,7 @@ public class DoNOTStayInTrees implements Listener {
                     Bukkit.broadcastMessage(e.getPlayer().getDisplayName() + "§c由于人品太差被雷劈了！");
                     originalTime = 0;
                 }
-            } else if (isSimilar(RealMinecraft.TreesGet2, playerIS)) {
+            } else if (isSimilar(TreesGet2, playerIS)) {
                 originalTime2++;
                 if (originalTime2 >= timePassthrough) {
                     e.getPlayer().getWorld().strikeLightning(playerLocation);

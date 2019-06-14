@@ -1,10 +1,12 @@
 package cn.lingyuncraft.realminecraft;
 
+import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBucketFillEvent;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.Random;
 
@@ -14,6 +16,12 @@ import java.util.Random;
  * @date 2019/5/12
  */
 public class BrokenBucket implements Listener {
+
+    private static Material TruelyBucket = Material.BUCKET;
+    private static Material LAVA = Material.LAVA;
+    private static Material WATER = Material.WATER;
+    private static Material AIR = Material.AIR;
+    private static ItemStack ChangedBucket = new ItemStack(Material.IRON_INGOT);
 
     @EventHandler
     public void onUseBucket(PlayerBucketFillEvent e) {
@@ -25,31 +33,31 @@ public class BrokenBucket implements Listener {
         boolean isBreak;
 
         isBreak = number <= max && number >= min;
-        if (e.getBucket() == RealMinecraft.TruelyBucket && e.getBlockClicked().getType() == RealMinecraft.LAVA) {
+        if (e.getBucket() == TruelyBucket && e.getBlockClicked().getType() == LAVA) {
             if (isBreak) {
                 World playerWorld = e.getPlayer().getWorld();
                 int playerX = e.getPlayer().getLocation().getBlockX();
                 int playerY = e.getPlayer().getLocation().getBlockY();
                 int playerZ = e.getPlayer().getLocation().getBlockZ();
                 Block changedBlock = playerWorld.getBlockAt(playerX, playerY,playerZ);
-                if (e.getPlayer().getLocation().getBlock().getType() == RealMinecraft.AIR) {
-                    e.setItemStack(RealMinecraft.ChangedBucket);
+                if (e.getPlayer().getLocation().getBlock().getType() == AIR) {
+                    e.setItemStack(ChangedBucket);
                     e.getPlayer().sendMessage("§a你的桶看起来不太牢固......");
-                    changedBlock.setType(RealMinecraft.LAVA);
+                    changedBlock.setType(LAVA);
                 }
             }
         }
-        if (e.getBucket() == RealMinecraft.TruelyBucket && e.getBlockClicked().getType() == RealMinecraft.WATER) {
+        if (e.getBucket() == TruelyBucket && e.getBlockClicked().getType() == WATER) {
             if (isBreak) {
                 World playerWorld = e.getPlayer().getWorld();
                 int playerX = e.getPlayer().getLocation().getBlockX();
                 int playerY = e.getPlayer().getLocation().getBlockY();
                 int playerZ = e.getPlayer().getLocation().getBlockZ();
                 Block changedBlock = playerWorld.getBlockAt(playerX, playerY, playerZ);
-                if (e.getPlayer().getLocation().getBlock().getType() == RealMinecraft.AIR) {
-                    e.setItemStack(RealMinecraft.ChangedBucket);
+                if (e.getPlayer().getLocation().getBlock().getType() == AIR) {
+                    e.setItemStack(ChangedBucket);
                     e.getPlayer().sendMessage("§a你的桶看起来不太牢固......");
-                    changedBlock.setType(RealMinecraft.WATER);
+                    changedBlock.setType(WATER);
                 }
             }
         }
